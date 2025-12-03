@@ -1,0 +1,218 @@
+/* =========================================================
+   RESET BÁSICO
+   Remove margens e formatações padrão do navegador
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do corpo */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    line-height: 1.6;
+    background: #ffffff;
+}
+
+/* Limita largura e centraliza conteúdo */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+
+/* =========================================================
+   HEADER - MENU FIXO NO TOPO
+========================================================= */
+header {
+    background: #fff;
+    width: 100%;
+    position: fixed;       /* Fica colado no topo ao rolar */
+    top: 0;
+    left: 0;
+    z-index: 1000;         /* Sempre acima do conteúdo */
+    border-bottom: 1px solid #eee;
+}
+
+/* Área interna do header */
+.header-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+/* Título do site no header */
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Lista do menu */
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+/* Links do menu */
+.menu a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    color: #0a58ca;
+}
+
+
+
+/* =========================================================
+   HERO (BANNER PRINCIPAL)
+========================================================= */
+.hero {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 180px 20px 120px;
+    margin-top: 70px; /* espaço por causa do header fixo */
+}
+
+.hero h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: auto;
+}
+
+/* Botões da hero */
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Botões gerais */
+.btn {
+    background: #0a58ca;
+    padding: 12px 22px;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* Botão com estilo outline */
+.btn-outline {
+    background: transparent;
+    border: 2px solid #fff;
+}
+
+.btn:hover {
+    opacity: .85;
+}
+
+
+
+/* =========================================================
+   SEÇÃO: O QUE VOCÊ ENCONTRA
+========================================================= */
+.features {
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Título das seções */
+.section-title {
+    font-size: 26px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+/* Grid dos cartões */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;   /* permite quebrar linha no celular */
+}
+
+/* Estilo dos cartões */
+.card {
+    width: 280px;
+    padding: 25px;
+    border-radius: 12px;
+    background: #f8f8f8;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+.card .icon {
+    font-size: 40px;
+}
+
+.card h3 {
+    margin: 15px 0;
+}
+
+
+
+/* =========================================================
+   SEÇÕES GERAIS (MANUAL, VIDEOAULAS, PESQUISA, DÚVIDAS)
+========================================================= */
+.section {
+    padding: 80px 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.icon-large {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #000;
+    color: white;
+    margin-top: 40px;
+}
+
+
+
+/* =========================================================
+   RESPONSIVIDADE (CELULAR)
+========================================================= */
+@media (max-width: 768px) {
+
+    /* Esconde menu no mobile (pode trocar por menu hamburguer depois) */
+    .menu {
+        display: none;
+    }
+
+    /* Cartões em coluna no mobile */
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+}
