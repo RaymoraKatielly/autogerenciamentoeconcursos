@@ -1,20 +1,46 @@
-/* =========================================================
-   JAVASCRIPT SIMPLES PARA ROLAGEM SUAVE ENTRE SEÇÕES
-========================================================= */
+// script.js
 
-// Seleciona todos os links do menu que começam com "#"
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+// MENU MOBILE
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector(".nav-menu");
 
-    // Adiciona um evento ao clicar
-    link.addEventListener("click", function(e) {
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navMenu.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
 
-        // Impede que o link funcione da forma tradicional
-        e.preventDefault();
-
-        // Obtém o destino do link (ex: #manual)
-        const alvo = document.querySelector(this.getAttribute("href"));
-
-        // Rola suavemente até o destino
-        alvo.scrollIntoView({ behavior: "smooth" });
+  // Fecha o menu ao clicar em um link
+  navMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
     });
-});
+  });
+}
+
+// DESTACAR LINK ATIVO AO ROLAR / CLICAR
+const sections = document.querySelectorAll("main section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+function setActiveLink() {
+  let currentId = "";
+
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= 80 && rect.bottom >= 80) {
+      currentId = section.id;
+    }
+  });
+
+  navLinks.forEach((link) => {
+    if (link.getAttribute("href") === `#${currentId}`) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", setActiveLink);
+window.addEventListener("load", setActiveLink);

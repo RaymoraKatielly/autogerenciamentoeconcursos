@@ -1,207 +1,78 @@
-/* =========================================================
-   RESET BÁSICO - remove formatação padrão do navegador
-========================================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* RESET BÁSICO */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* =========================================================
-   CONFIGURAÇÕES GERAIS DO SITE
-========================================================= */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #ffffff;
-    color: #222;
-    line-height: 1.6;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #f4f5f7;
 }
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* =========================================================
-   HEADER FIXO (menu sempre no topo)
-========================================================= */
-header {
-    background: #fff;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #eee;
-}
-
-.header-area {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-}
-
-.logo {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* MENU */
-.menu {
-    display: flex;
-    gap: 20px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #222;
-    font-weight: 500;
-}
-
-.menu a:hover {
-    color: #0a58ca;
-}
-
-/* =========================================================
-   HERO (banner preto)
-========================================================= */
-.hero {
-    background: #000;
-    color: #fff;
-    text-align: center;
-
-    /* ESSENCIAL: empurra o conteúdo para NÃO ficar colado no menu */
-    padding: 180px 20px 120px;
-
-    /* O HERO precisa começar abaixo do menu fixo */
-    margin-top: 70px;
-    width: 100%;
-}
-
-.hero h1 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    line-height: 1.3;
-}
-
-.hero p {
-    max-width: 750px;
-    margin: 0 auto;
-    font-size: 18px;
-}
-
-/* BOTÕES DO HERO */
-.hero-buttons {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.btn {
-    background: #0a58ca;
-    padding: 12px 22px;
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid #fff;
-}
-
-.btn:hover {
-    opacity: .85;
-}
-
-/* =========================================================
-   "O QUE VOCÊ ENCONTRA"
-========================================================= */
-.features {
-    padding: 80px 0;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 28px;
-    margin-bottom: 40px;
-    font-weight: bold;
-}
-
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-/* CARD */
-.card {
-    width: 280px;
-    padding: 25px;
-    border-radius: 12px;
-    background: #f8f8f8;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.card .icon {
-    font-size: 40px;
-}
-
-.card h3 {
-    margin: 15px 0;
-}
-
-/* =========================================================
-   SEÇÕES GERAIS (manual, videoaulas, pesquisa, dúvidas)
-========================================================= */
+/* LAYOUT GERAL */
 .section {
-    padding: 80px 0;
-    text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-inner.two-columns {
+  display: grid;
+  grid-template-columns: 2fr 1.3fr;
+  gap: 2.5rem;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #153e75;
+}
+
+.section h3 {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.75rem;
+  color: #153e75;
 }
 
 .section p {
-    max-width: 780px;
-    margin: 0 auto 15px;
+  margin-bottom: 0.75rem;
 }
 
-.icon-large {
-    font-size: 60px;
-    margin-bottom: 15px;
+/* HEADER E NAVBAR */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #ffffff;
+  border-bottom: 1px solid #d2d6dc;
 }
 
-/* =========================================================
-   RODAPÉ
-========================================================= */
-footer {
-    background: #000;
-    color: #fff;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
+.logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.75rem 1.5rem 0.5rem;
+  gap: 0.75rem;
 }
 
-/* =========================================================
-   RESPONSIVIDADE
-========================================================= */
-@media (max-width: 768px) {
-
-    /* Esconde menu no mobile (vamos colocar hambúrguer depois) */
-    .menu {
-        display: none;
-    }
-
-    .cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero h1 {
-        font-size: 24px;
-    }
+.logo-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #10b981);
+  display: flex;
+  align-items: center;
+  justify-content: ce
 }

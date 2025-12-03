@@ -1,230 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- TÍTULO DA ABA DO NAVEGADOR -->
-    <title>Autogerenciamento & Concursos</title>
-
-    <!-- ARQUIVO DE ESTILOS -->
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>Autogerenciamento para Concursos Públicos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
-<!-- =========================================================
-    CABEÇALHO (HEADER)
-    Menu fixo no topo para navegação suave entre seções
-========================================================= -->
-<header id="header">
-    <div class="container header-area">
-
-        <!-- LOGO OU TÍTULO DO SITE -->
-        <h2 class="logo">Autogerenciamento e Concursos</h2>
-
-        <!-- MENU DE NAVEGAÇÃO -->
-        <nav>
-            <ul class="menu">
-                <!-- Cada link aponta para uma seção da mesma página -->
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#encontra">O que você encontra</a></li>
-                <li><a href="#manual">Manual</a></li>
-                <li><a href="#videoaulas">Videoaulas</a></li>
-                <li><a href="#pesquisa">Pesquisa</a></li>
-                <li><a href="#duvidas">Dúvidas</a></li>
-            </ul>
-        </nav>
-
+  <header class="site-header">
+    <div class="logo-area">
+      <div class="logo-mark">PE</div>
+      <div class="logo-text">
+        <h1>Produto Educacional</h1>
+        <p>Autogerenciamento & Resolução de Problemas em Concursos Públicos</p>
+      </div>
     </div>
-</header>
 
+    <nav class="main-nav">
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        ☰
+      </button>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link active">Página Inicial</a></li>
+        <li><a href="#pesquisa" class="nav-link">Pesquisa</a></li>
+        <li><a href="#manual" class="nav-link">Manual Estratégico</a></li>
+        <li><a href="#videoaulas" class="nav-link">Videoaulas</a></li>
+        <li><a href="#duvidas" class="nav-link">Dúvidas e sugestões</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main>
+    <!-- PÁGINA INICIAL -->
+    <section id="home" class="section active-section">
+      <div class="section-inner two-columns">
+        <div>
+          <h2>Bem-vindo(a) ao Produto Educacional</h2>
+          <p class="lead">
+            Este site é um Produto Educacional desenvolvido no âmbito de uma pesquisa de mestrado cujo objetivo é analisar como práticas de autogerenciamento se articulam às estratégias de Resolução de Problemas e influenciam o desempenho de candidatos a concursos públicos.
+          </p>
 
-<!-- =========================================================
-    SEÇÃO HERO (BANNER PRINCIPAL)
-    Grande destaque com título, descrição e botões
-========================================================= -->
-<section id="inicio" class="hero">
-    <div class="container hero-content">
+          <h3>Base de elaboração</h3>
+          <ul class="check-list">
+            <li>Análise de editais e provas;</li>
+            <li>Entrevistas com candidatos;</li>
+            <li>Fundamentação teórica consolidada.</li>
+          </ul>
 
-        <h1>Autogerenciamento & Resolução de Problemas para Concursos Públicos</h1>
-
-        <p>
-            Produto Educacional desenvolvido em pesquisa de mestrado,
-            oferecendo estratégias práticas e teóricas para fortalecer sua
-            preparação em concursos públicos.
-        </p>
-
-        <!-- BOTÕES DE AÇÃO (CTA) -->
-        <div class="hero-buttons">
-            <a href="#" class="btn">Acessar Manual</a>
-            <a href="#" class="btn btn-outline">Assistir Videoaulas</a>
+          <h3>O que você encontra aqui</h3>
+          <ul class="check-list">
+            <li>
+              <strong>Manual Estratégico de Autogerenciamento</strong> (material teórico)
+            </li>
+            <li>
+              <strong>Videoaulas curtas e objetivas</strong> (material prático)
+            </li>
+            <li>
+              <strong>Espaço para dúvidas e sugestões</strong> sobre o material.
+            </li>
+          </ul>
         </div>
 
-    </div>
-</section>
+        <aside class="highlight-card">
+          <h3>Foco do Produto Educacional</h3>
+          <p>
+            A preparação para concursos públicos vai muito além de apenas
+            aprender conteúdo. Trata-se de um problema complexo que envolve:
+          </p>
+          <ul>
+            <li>Gestão do tempo;</li>
+            <li>Controle emocional;</li>
+            <li>Planejamento estratégico de estudo.</li>
+          </ul>
+          <p>
+            Este site, com videoaulas e Manual Estratégico de Autogerenciamento,
+            oferece uma proposta metodológica fundamentada para apoiar o
+            candidato em todas essas dimensões.
+          </p>
+        </aside>
+      </div>
+    </section>
 
-
-
-
-
-<!-- =========================================================
-    SEÇÃO: O QUE VOCÊ ENCONTRA
-    3 cartões com ícones + textos explicativos
-========================================================= -->
-<section id="encontra" class="features">
-
-    <div class="container">
-        
-        <!-- TÍTULO DA SEÇÃO -->
-        <h2 class="section-title">O que você encontra neste site?</h2>
-
-        <!-- GRID DE CARTÕES -->
-        <div class="cards">
-
-            <!-- CARTÃO 1 -->
-            <div class="card">
-                <div class="icon">📘</div>
-                <h3>Manual Estratégico</h3>
-                <p>
-                    Orientações fundamentadas para organização,
-                    planejamento e autorregulação dos estudos.
-                </p>
-            </div>
-
-            <!-- CARTÃO 2 -->
-            <div class="card">
-                <div class="icon">🎥</div>
-                <h3>Videoaulas Práticas</h3>
-                <p>
-                    Conteúdos objetivos sobre controle emocional,
-                    planejamento e resolução de problemas.
-                </p>
-            </div>
-
-            <!-- CARTÃO 3 -->
-            <div class="card">
-                <div class="icon">🔍</div>
-                <h3>Sobre a Pesquisa</h3>
-                <p>
-                    Resultado de entrevistas, análise de editais
-                    e fundamentação teórica sólida.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-
-
-<!-- =========================================================
-    SEÇÃO: MANUAL ESTRATÉGICO
-========================================================= -->
-<section id="manual" class="section">
-    <div class="container center">
-
-        <!-- ÍCONE GRANDE -->
-        <div class="icon-large">📘</div>
-
-        <h2>Manual Estratégico</h2>
-
-        <p>
-            Orientações fundamentadas para organização,
-            planejamento e autorregulação dos estudos.
+    <!-- PESQUISA -->
+    <section id="pesquisa" class="section">
+      <div class="section-inner">
+        <h2>A Pesquisa</h2>
+        <p class="lead">
+          Esta pesquisa investigou o desempenho dos candidatos em processos
+          seletivos para a carreira docente no estado de Mato Grosso, analisando,
+          entre outros aspectos, como as habilidades promovidas pelas estratégias
+          de Resolução de Problemas podem impactar esse desempenho.
         </p>
 
-        <a href="#" class="btn">Baixar Manual</a>
-
-    </div>
-</section>
-
-
-
-
-
-<!-- =========================================================
-    SEÇÃO: VIDEOAULAS PRÁTICAS
-========================================================= -->
-<section id="videoaulas" class="section">
-    <div class="container center">
-
-        <div class="icon-large">🎥</div>
-
-        <h2>Videoaulas Práticas</h2>
-
         <p>
-            Conteúdos sobre controle emocional, leitura estratégica
-            e resolução de problemas aplicados a concursos públicos.
+          Partiu-se do pressuposto de que estudar para concursos envolve não
+          apenas a aquisição de conteúdos, mas também a adoção de
+          <strong>práticas de autogerenciamento</strong> que contribuem para a
+          organização, o monitoramento e a regulação do próprio processo de
+          aprendizagem. O objetivo da pesquisa concentra-se em analisar como
+          essas práticas se articulam às estratégias de Resolução de Problemas.
         </p>
 
-        <a href="#" class="btn">Assistir Agora</a>
-
-    </div>
-</section>
-
-
-
-
-
-<!-- =========================================================
-    SEÇÃO: SOBRE A PESQUISA
-========================================================= -->
-<section id="pesquisa" class="section">
-    <div class="container center">
-
-        <div class="icon-large">🔍</div>
-
-        <h2>Sobre a Pesquisa</h2>
-
         <p>
-            Baseada em entrevistas, análise de editais e revisão
-            teórica sólida, sustentando este Produto Educacional.
+          A metodologia utilizada incluiu:
         </p>
-
-        <a href="#" class="btn">Ler Pesquisa</a>
-        
-    </div>
-</section>
-
-
-
-
-
-<!-- =========================================================
-    SEÇÃO: DÚVIDAS E SUGESTÕES
-========================================================= -->
-<section id="duvidas" class="section">
-    <div class="container center">
-
-        <h2>Dúvidas e Sugestões</h2>
-
-        <p>Se quiser enviar uma dúvida ou sugestão, clique abaixo:</p>
-
-        <a href="#" class="btn">Enviar Mensagem</a>
-
-    </div>
-</section>
-
-
-
-
-
-<!-- =========================================================
-    RODAPÉ
-========================================================= -->
-<footer>
-    <p>© 2025 Autogerenciamento e Concursos · Desenvolvido para pesquisa de Mestrado</p>
-</footer>
-
-
-<!-- ARQUIVO DE JAVASCRIPT -->
-<script src="js/script.js"></script>
-
-</body>
-</html>
+        <ul class="bullet-li
