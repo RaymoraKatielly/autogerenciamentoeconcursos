@@ -1,10 +1,16 @@
-/* RESET BÁSICO */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* -----------------------------------------------------------
+   ESTILO A — ACADÊMICO MINIMALISTA PROFISSIONAL
+   Autor: ChatGPT para Raymora Katielle
+----------------------------------------------------------- */
+
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* RESET */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -12,67 +18,302 @@ html {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Inter", sans-serif;
+  background-color: #F9FAFB;
+  color: #111827;
   line-height: 1.6;
-  color: #222;
-  background-color: #f4f5f7;
 }
 
-/* LAYOUT GERAL */
+/* ===========================
+   NAVBAR
+=========================== */
+.site-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.5rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background-color: #2563EB;
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.logo-text p {
+  font-size: 0.85rem;
+  color: #6B7280;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.3rem;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #4B5563;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  transition: 0.2s;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  background-color: #E5E7EB;
+  color: #1D4ED8;
+}
+
+.nav-link.active {
+  background-color: #1D4ED8;
+  color: #FFFFFF;
+}
+
+/* MOBILE */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+}
+
+/* ===========================
+   SEÇÕES
+=========================== */
 .section {
   padding: 4rem 1.5rem;
 }
 
 .section-inner {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .section-inner.two-columns {
   display: grid;
-  grid-template-columns: 2fr 1.3fr;
-  gap: 2.5rem;
+  gap: 2rem;
+  grid-template-columns: 2fr 1.2fr;
 }
 
-.section h2 {
-  font-size: 2rem;
+/* ===========================
+   TIPOGRAFIA
+=========================== */
+h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #1D4ED8;
   margin-bottom: 1rem;
-  color: #153e75;
 }
 
-.section h3 {
-  font-size: 1.2rem;
+h3 {
+  font-size: 1.3rem;
+  color: #1D4ED8;
   margin: 1.5rem 0 0.75rem;
-  color: #153e75;
 }
 
-.section p {
+p.lead {
+  font-size: 1.05rem;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+p {
   margin-bottom: 0.75rem;
+  color: #374151;
 }
 
-/* HEADER E NAVBAR */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background-color: #ffffff;
-  border-bottom: 1px solid #d2d6dc;
+/* ===========================
+   LISTAS
+=========================== */
+.check-list,
+.bullet-list {
+  list-style: none;
+  margin-bottom: 1.2rem;
 }
 
-.logo-area {
+.check-list li,
+.bullet-list li {
+  margin-bottom: 0.45rem;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0.75rem 1.5rem 0.5rem;
-  gap: 0.75rem;
+  align-items: flex-start;
 }
 
-.logo-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #2563eb, #10b981);
-  display: flex;
-  align-items: center;
-  justify-content: ce
+.check-list li::before {
+  content: "✔";
+  color: #10B981;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.bullet-list li::before {
+  content: "•";
+  color: #2563EB;
+  font-size: 1.2rem;
+  margin-right: 0.6rem;
+}
+
+/* ===========================
+   CARDS
+=========================== */
+.highlight-card,
+.info-card,
+.video-card {
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+  border: 1px solid #E5E7EB;
+  transition: 0.2s ease;
+}
+
+.highlight-card:hover,
+.info-card:hover,
+.video-card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+}
+
+/* ===========================
+   TABELAS
+=========================== */
+.info-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.info-card th {
+  background: #F3F4F6;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.info-card td {
+  padding: 0.6rem;
+  border-top: 1px solid #E5E7EB;
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+.button {
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  background-color: #1D4ED8;
+  color: #FFFFFF;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  transition: 0.2s ease;
+}
+
+.button:hover {
+  background-color: #2563EB;
+}
+
+.button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   VÍDEOS
+=========================== */
+.video-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.video-thumb {
+  background-color: #E5E7EB;
+  padding-top: 56.25%;
+  border-radius: 8px;
+  position: relative;
+}
+
+.video-thumb span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #6B7280;
+}
+
+/* ===========================
+   RODAPÉ
+=========================== */
+.site-footer {
+  background: #111827;
+  color: #D1D5DB;
+  text-align: center;
+  padding: 1.8rem 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+.site-footer .small {
+  font-size: 0.78rem;
+  color: #9CA3AF;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+@media (max-width: 850px) {
+  .section-inner.two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-top: 1px solid #E5E7EB;
+    margin-top: 0.5rem;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 0.9rem 1rem;
+  }
 }
