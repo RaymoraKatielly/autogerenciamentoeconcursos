@@ -1,7 +1,7 @@
-/* -----------------------------------------------------------
-   ESTILO A — ACADÊMICO MINIMALISTA PROFISSIONAL
-   Autor: ChatGPT para Raymora Katielle
------------------------------------------------------------ */
+/*----------------------------------------------------------
+  ESTILO A — ACADÊMICO MINIMALISTA PROFISSIONAL
+  Autor: Raymora Katielle
+-----------------------------------------------------------*/
 
 /* GOOGLE FONT */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -17,138 +17,194 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --primary: #1D4ED8;
+  --primary-light: #2563EB;
+  --bg: #F9FAFB;
+  --white: #FFFFFF;
+  --text: #111827;
+  --text-soft: #374151;
+  --muted: #6B7280;
+  --border: #E5E7EB;
+  --border-soft: #EEF2F7;
+  --success: #10B981;
+  --footer: #111827;
+  --footer-soft: #9CA3AF;
+  --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --radius: 12px;
+  --radius-lg: 16px;
+  --container: 1100px;
+}
+
 body {
   font-family: "Inter", sans-serif;
-  background-color: #F9FAFB;
-  color: #111827;
+  background-color: var(--bg);
+  color: var(--text);
   line-height: 1.6;
 }
 
 /* ===========================
-   NAVBAR
+   HEADER
 =========================== */
 .site-header {
-  background: #FFFFFF;
-  border-bottom: 1px solid #E5E7EB;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 0.5rem 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  padding: 1rem 1.5rem;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .logo-area {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.9rem;
+  min-width: 280px;
+  flex: 1 1 420px;
 }
 
 .logo-mark {
-  width: 42px;
-  height: 42px;
-  border-radius: 8px;
-  background-color: #2563EB;
-  color: #ffffff;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: var(--white);
   font-weight: 700;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .logo-text h1 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #111827;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.2rem;
 }
 
 .logo-text p {
-  font-size: 0.85rem;
-  color: #6B7280;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0;
 }
 
+/* ===========================
+   NAVBAR
+=========================== */
 .main-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 0.3rem;
+  justify-content: flex-end;
+  flex: 1 1 420px;
+  position: relative;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1.4rem;
+  padding: 0.35rem 0.7rem;
+  color: var(--text);
+  cursor: pointer;
 }
 
 .nav-menu {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .nav-link {
   text-decoration: none;
   color: #4B5563;
-  padding: 0.4rem 0.9rem;
-  border-radius: 6px;
-  transition: 0.2s;
+  padding: 0.55rem 0.95rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
   font-size: 0.95rem;
+  font-weight: 500;
+  display: inline-block;
 }
 
 .nav-link:hover {
-  background-color: #E5E7EB;
-  color: #1D4ED8;
+  background-color: #EFF6FF;
+  color: var(--primary);
 }
 
 .nav-link.active {
-  background-color: #1D4ED8;
-  color: #FFFFFF;
-}
-
-/* MOBILE */
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.6rem;
+  background-color: var(--primary);
+  color: var(--white);
 }
 
 /* ===========================
    SEÇÕES
 =========================== */
 .section {
-  padding: 4rem 1.5rem;
+  padding: 4.5rem 1.5rem;
 }
 
 .section-inner {
-  max-width: 1100px;
-  margin: auto;
+  max-width: var(--container);
+  margin: 0 auto;
 }
 
 .section-inner.two-columns {
   display: grid;
   gap: 2rem;
-  grid-template-columns: 2fr 1.2fr;
+  grid-template-columns: 2fr 1.1fr;
+  align-items: start;
 }
 
 /* ===========================
    TIPOGRAFIA
 =========================== */
 h2 {
-  font-size: 1.9rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: #1D4ED8;
+  color: var(--primary);
   margin-bottom: 1rem;
+  line-height: 1.25;
 }
 
 h3 {
-  font-size: 1.3rem;
-  color: #1D4ED8;
-  margin: 1.5rem 0 0.75rem;
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin: 1.25rem 0 0.75rem;
+  line-height: 1.35;
 }
 
 p.lead {
   font-size: 1.05rem;
-  color: #374151;
+  color: var(--text-soft);
   margin-bottom: 1rem;
 }
 
 p {
-  margin-bottom: 0.75rem;
-  color: #374151;
+  margin-bottom: 0.9rem;
+  color: var(--text-soft);
+}
+
+.small {
+  font-size: 0.9rem;
+  color: var(--muted);
 }
 
 /* ===========================
@@ -162,23 +218,27 @@ p {
 
 .check-list li,
 .bullet-list li {
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.55rem;
   display: flex;
   align-items: flex-start;
+  color: var(--text-soft);
 }
 
 .check-list li::before {
   content: "✔";
-  color: #10B981;
-  font-weight: 600;
-  margin-right: 0.5rem;
+  color: var(--success);
+  font-weight: 700;
+  margin-right: 0.6rem;
+  flex-shrink: 0;
 }
 
 .bullet-list li::before {
   content: "•";
-  color: #2563EB;
+  color: var(--primary-light);
   font-size: 1.2rem;
+  line-height: 1;
   margin-right: 0.6rem;
+  flex-shrink: 0;
 }
 
 /* ===========================
@@ -187,18 +247,125 @@ p {
 .highlight-card,
 .info-card,
 .video-card {
-  background: #FFFFFF;
-  border-radius: 10px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
   padding: 1.5rem;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.04);
-  border: 1px solid #E5E7EB;
-  transition: 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: all 0.25s ease;
 }
 
 .highlight-card:hover,
 .info-card:hover,
 .video-card:hover {
-  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+/* ===========================
+   BADGES
+=========================== */
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.badge-info {
+  background: #DBEAFE;
+  color: var(--primary);
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+.button {
+  padding: 0.72rem 1.4rem;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: var(--white);
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 0.6rem;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.button:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+.button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   VÍDEOS
+=========================== */
+.video-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.video-card h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.45rem;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.video-player {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000000;
+  border: 1px solid var(--border-soft);
+}
+
+.video-player video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Caso ainda exista algum bloco antigo de miniatura */
+.video-thumb {
+  background-color: #E5E7EB;
+  padding-top: 56.25%;
+  border-radius: 8px;
+  position: relative;
+}
+
+.video-thumb span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--muted);
+}
+
+/* ===========================
+   FAQ
+=========================== */
+.info-card h3 {
+  margin-top: 0;
+}
+
+.info-card p strong {
+  color: var(--text);
 }
 
 /* ===========================
@@ -212,89 +379,72 @@ p {
 
 .info-card th {
   background: #F3F4F6;
-  padding: 0.6rem;
+  padding: 0.65rem;
   font-size: 0.9rem;
   text-align: left;
 }
 
 .info-card td {
-  padding: 0.6rem;
-  border-top: 1px solid #E5E7EB;
+  padding: 0.65rem;
+  border-top: 1px solid var(--border);
   font-size: 0.9rem;
-}
-
-/* ===========================
-   BOTÕES
-=========================== */
-.button {
-  padding: 0.65rem 1.4rem;
-  border-radius: 6px;
-  background-color: #1D4ED8;
-  color: #FFFFFF;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: 500;
-  margin-top: 0.5rem;
-  transition: 0.2s ease;
-}
-
-.button:hover {
-  background-color: #2563EB;
-}
-
-.button.disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* ===========================
-   VÍDEOS
-=========================== */
-.video-grid {
-  margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-
-.video-thumb {
-  background-color: #E5E7EB;
-  padding-top: 56.25%;
-  border-radius: 8px;
-  position: relative;
-}
-
-.video-thumb span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #6B7280;
 }
 
 /* ===========================
    RODAPÉ
 =========================== */
 .site-footer {
-  background: #111827;
+  background: var(--footer);
   color: #D1D5DB;
   text-align: center;
-  padding: 1.8rem 1rem;
+  padding: 2rem 1rem;
   margin-top: 3rem;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+}
+
+.site-footer p {
+  color: #D1D5DB;
+  margin-bottom: 0.4rem;
 }
 
 .site-footer .small {
-  font-size: 0.78rem;
-  color: #9CA3AF;
+  font-size: 0.8rem;
+  color: var(--footer-soft);
 }
 
 /* ===========================
    RESPONSIVIDADE
 =========================== */
-@media (max-width: 850px) {
+@media (max-width: 1024px) {
   .section-inner.two-columns {
     grid-template-columns: 1fr;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 850px) {
+  .site-header {
+    padding: 1rem;
+  }
+
+  .logo-area {
+    align-items: flex-start;
+  }
+
+  .logo-text h1 {
+    font-size: 1rem;
+  }
+
+  .logo-text p {
+    font-size: 0.84rem;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: flex-end;
   }
 
   .nav-toggle {
@@ -303,10 +453,15 @@ p {
 
   .nav-menu {
     display: none;
+    width: 100%;
     flex-direction: column;
-    background: #FFFFFF;
-    border-top: 1px solid #E5E7EB;
-    margin-top: 0.5rem;
+    align-items: stretch;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-top: 0.8rem;
+    padding: 0.4rem;
+    box-shadow: var(--shadow-sm);
   }
 
   .nav-menu.open {
@@ -314,6 +469,50 @@ p {
   }
 
   .nav-link {
-    padding: 0.9rem 1rem;
+    padding: 0.85rem 1rem;
+    width: 100%;
+  }
+
+  .section {
+    padding: 4rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .logo-area {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .logo-mark {
+    width: 42px;
+    height: 42px;
+    font-size: 0.95rem;
+  }
+
+  .logo-text h1 {
+    font-size: 0.96rem;
+  }
+
+  .logo-text p {
+    font-size: 0.8rem;
+  }
+
+  .highlight-card,
+  .info-card,
+  .video-card {
+    padding: 1.2rem;
+  }
+
+  p.lead {
+    font-size: 1rem;
   }
 }
