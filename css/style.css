@@ -16,7 +16,13 @@
 html {
   scroll-behavior: smooth;
 }
+/* LOGO DO SITE */
 
+.site-logo{
+  height:55px;
+  width:auto;
+  object-fit:contain;
+}
 :root {
   --primary: #1D4ED8;
   --primary-light: #2563EB;
