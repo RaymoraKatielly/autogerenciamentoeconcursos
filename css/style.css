@@ -19,10 +19,12 @@ html {
 /* LOGO DO SITE */
 
 .site-logo{
-  height:55px;
+  height:65px;
   width:auto;
   object-fit:contain;
+  margin-right:10px;
 }
+
 :root {
   --primary: #1D4ED8;
   --primary-light: #2563EB;
