@@ -18,13 +18,12 @@ html {
 }
 /* LOGO DO SITE */
 
-.site-logo{
-  height:65px;
-  width:auto;
-  object-fit:contain;
-  margin-right:10px;
+.logo img{
+height:42px;
+border-radius:50%;
+background:white;
+padding:3px;
 }
-
 :root {
   --primary: #1D4ED8;
   --primary-light: #2563EB;
